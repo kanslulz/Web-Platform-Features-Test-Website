@@ -1,0 +1,30 @@
+{
+  "name": "rayankanso.com",
+  "version": "1.0.0",
+  "description": "code for rayankanso.com",
+  "main": "app.js",
+  "scripts": {
+    "start": "NODE_PATH=. node app.js",
+    "dev": "NODE_PATH=. nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kanslulz/rayankanso.com.git"
+  },
+  "author": "rayankans@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kanslulz/rayankanso.com/issues"
+  },
+  "homepage": "https://github.com/kanslulz/rayankanso.com#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql": "^2.16.0",
+    "pug": "^2.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-google": "^0.11.0"
+  }
+}

@@ -2,13 +2,13 @@
 /**
  * Responsible for interacting with the Spinner.
  */
-class Spinner {
+export class SpinnerController {
   /**
-   * @param {!HTMLElement} spinner The spinner.
+   * @param {string} id The id of the spinner.
    */
-  constructor() {
+  constructor(id) {
     /** @const @private {!HTMLElement} */
-    this.spinner_ = spinner;
+    this.spinner_ = document.getElementById(id);
   }
 
   /**
@@ -28,11 +28,10 @@ class Spinner {
 }
 
 /**
- * @param {string} id The id of the spinner
- * @return {!Spinner}
+ * Responsible for showing the subscription status.
  */
-export function create(id) {
-  const spinner = document.getElementById(id);
-  if (!spinner) throw Error('Spinner not found');
-  return new Spinner(spinner);
+export class SubscriptionController {
+  constructor() {
+
+  }
 }

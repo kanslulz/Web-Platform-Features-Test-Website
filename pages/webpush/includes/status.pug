@@ -1,0 +1,14 @@
+include spinner.pug
+
+p.step Prerequisites
+  ul
+    li
+      p Notification Permission
+        label#notif-perm
+    li 
+      p Service Worker
+        label#sw-status
+p.step Active Subscriptions
+  div#active-sub
+    div#reg-status
+    +spinner('spinner')

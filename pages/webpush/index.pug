@@ -1,6 +1,14 @@
+include includes/spinner.pug
+
 doctype html
 html
-  head
-    title Web Push
+  include includes/head.pug
   body
-    h1 Web Push
+    div.header
+      p.header-text Push Notifications Test Website
+      p.header-sub Create custom schedulable push notifications    
+    div.grid  
+      div.instructions
+        include includes/instructions.pug
+      div.status
+        include includes/status.pug

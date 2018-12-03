@@ -1,0 +1,78 @@
+.grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas: 
+    "status"
+    "instructions";
+}
+
+@media screen and (min-width: 1200px) {
+  .grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 600px 600px 1fr;
+    grid-template-areas:
+    ". instructions status ."
+  }
+}
+
+.header {
+  margin: 0 -9999rem;
+  /* add back negative margin value */
+  padding: 0.25rem 9999rem;
+  background-color: #e9ecef;
+}
+
+.header-text {
+  font-family: "Segoe UI", "Roboto", "Helvetica Neue";
+  font-size: 50px;
+  font-weight: 300;
+  padding-left: 20px;
+}
+
+.header-sub {
+  font-family: "Roboto";
+  font-size: 16px;
+  padding-left: 20px;
+}
+
+.instructions {
+  grid-area: instructions;
+  padding-left: 5px;
+  background-color: rgb(250, 250, 250);
+}
+
+.instruction {
+  font-family: "Arial";
+}
+
+.step {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+input[type="text"] {
+  width: 98%;
+  font-size: 16px;
+  font-family: "Courier";
+}
+
+.status {
+  grid-area: status;
+  background-color: rgb(250, 250, 250);
+  padding-left: 10px;
+  font-family: "Arial";
+}
+
+.btn {
+  background-color: #008CBA;
+  border: 10px;
+  color: white;
+  padding: 15px 32px 15px 32px;
+  margin-left: 5px;
+  margin-bottom: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}

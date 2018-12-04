@@ -8,4 +8,6 @@ router.use(
     '/static',
     (req, res) => res.sendFile(`${__dirname}/static${req.path}`));
 
+router.get('/createsubscription', (req, res) => res.status(204).send());
+
 module.exports = router;

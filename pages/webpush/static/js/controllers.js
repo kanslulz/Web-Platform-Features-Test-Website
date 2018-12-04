@@ -28,6 +28,27 @@ export class SpinnerController {
 }
 
 /**
+ * Responsible for creating a new push subscription.
+ * @param {string} serializedPushSubscription
+ */
+export async function createPushSubscription(serializedPushSubscription) {
+  const urlParams = new URLSearchParams();
+  const days = [];
+  for (const day of document.getElementsByClassName('checkbox-day')) {
+    if (!day.checked) continue;
+    days.push(day.id.substr('day-'.length));
+  }
+  urlParams.set('days', days.join(''));
+  urlParams.set('time', document.getElementById('time-picker').value);
+  urlParams.set('tz', new Date().getTimezoneOffset());
+  urlParams.set('nb', document.getElementById('notif-body').value);
+  urlParams.set('ps', serializedPushSubscription);
+
+  const response = await fetch(`createsubscription?${urlParams.toString()}`);
+  console.log(await response.text());
+}
+
+/**
  * Responsible for showing the subscription status.
  */
 export class SubscriptionController {

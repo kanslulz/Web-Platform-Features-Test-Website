@@ -1,6 +1,10 @@
 div.instruction
   p.step Step 1 - Choose how often you want to receive a notification
-  // TODO(kanslulz): Add input.
+  span#time-wrapper
+    input(type="time" value="16:20" id="time-picker")
+  each day in ['M', 'T', 'W', 'Tr', 'F', 'S', 'Su']
+    input(type="checkbox" class="checkbox-day" id="day-"+day checked)
+    label.checkbox-day-label #{day}
   p For Example, the set-up above schedules a daily push at 4:20PM
 div.instruction
   p.step Step 2 - Choose a custom notification body

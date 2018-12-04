@@ -1,4 +1,4 @@
-import {SpinnerController} from './controllers.js';
+import * as controllers from './controllers.js';
 
 window.addEventListener('load', setup);
 
@@ -42,7 +42,7 @@ async function setup() {
     document.getElementById('reg-status').textContent = 'No Registrations';
   }
 
-  const spinnerController = new SpinnerController('spinner');
+  const spinnerController = new controllers.SpinnerController('spinner');
   spinnerController.hide(2000);
 }
 
@@ -71,10 +71,11 @@ function urlBase64ToUint8Array(base64String) {
 async function handleClick() {
   if (!pushSubscription) {
     // Create Push Subscription.
-    subscription = await serviceWorkerReg.pushManager.subscribe({
+    pushSubscription = await serviceWorkerReg.pushManager.subscribe({
       userVisibleOnly: true,
       applicationServerKey: urlBase64ToUint8Array(
         'BBg9YJtNbfD5QX9eL_FQVUEZQQvpE2LlGdAszsgkhEOXP8yGtyyN_9ojok8pm2IuAsVsPcZwx23iPCC8f7MPNw4'
       )});
   }
+  controllers.createPushSubscription(JSON.stringify(pushSubscription));
 }

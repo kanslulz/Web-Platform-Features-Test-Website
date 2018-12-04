@@ -5,7 +5,10 @@ const port = 3333;
 app.set('view engine', 'pug');
 
 // Redirect to the home page.
-app.get('/', (req, res) => res.redirect('/home'));
+app.get('/', (req, res) => res.redirect('/home/'));
+
+// Redirect paths that don't end with a '/' so relative paths can be used.
+app.use('/[^/]+$', (req, res) => res.redirect(req.baseUrl + '/'));
 
 // Set up routing to keep projects independent.
 app.use('/home', require('pages/home/app.js'));

@@ -20,4 +20,8 @@ async function setup() {
 
   navigator.serviceWorker.addEventListener('message', event => logController.addUpdate(event.data));
   serviceWorkerReg.sync.register('startup-sync-event');
+
+  const syncHandler = await import('./sync.js').then(m => m.createHandler(serviceWorkerReg.sync));
+  const button = document.getElementsByClassName('btn')[0];
+  button.addEventListener('click', () => syncHandler.createSync());
 }

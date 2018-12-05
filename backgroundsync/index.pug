@@ -3,8 +3,16 @@ include ../common/header.pug
 doctype html
 head
   title Background Sync
+  link(rel="stylesheet" href="static/css/styles.css")
+  script(src="static/js/index.js", type="module")
 body
   // Header 
   - const title = 'Background Sync Test Website'
   - const subtitle = 'Test out Background Sync options'
   +header(title, subtitle)
+
+  div.grid
+      div.create
+        h1 create
+      div.log
+        h1 log

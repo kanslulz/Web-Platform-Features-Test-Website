@@ -25,10 +25,14 @@ class SyncHandler {
     });
   }
 
-  createSync() {
+  async createSync() {
     const syncId = this.getSyncOptions_();
     logController.addUpdate(`Registering: <pre>${syncId}</pre>`);
-    this.syncManager_.register(syncId);
+    try {
+      await this.syncManager_.register(syncId);
+    } catch (e) {
+      logController.addUpdate(`Failed to register: <pre>${syncId}</pre>`);
+    }
   }
 }
 

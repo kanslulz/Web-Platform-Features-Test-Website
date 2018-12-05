@@ -1,9 +1,15 @@
+include ../common/header.pug
+
 doctype html
 html
   head
     title kanslulz
   body
-    h1 Home Page
+    // Header 
+    - const title = 'Web Platform Features Test Website'
+    - const subtitle = 'Choose a web platform feature to test on your browser'
+    +header(title, subtitle)
+
     ul
       li
         a(href="/backgroundfetch/") Background Fetch

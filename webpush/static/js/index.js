@@ -13,9 +13,8 @@ async function setup() {
   let prerequisites = true;
   // Install Service Worker.
   try {
-    // TODO(kanslulz): Add a scope.
-    serviceWorkerReg =
-        await navigator.serviceWorker.register('static/js/sw.js');
+    serviceWorkerReg = await navigator.serviceWorker.register(
+        'static/js/sw.js', {scope: '/webpush/'});
     document.getElementById('sw-status').textContent = ' ✔️';
   } catch (e) {
     document.getElementById('sw-status').textContent = ' ✖️';

@@ -6,16 +6,18 @@ let serviceWorkerReg = null;
  * Initial page setup.
  */
 async function setup() {
-  let prerequisites = true;
+  const logController = await import('./log.js').then(m => m.logController);
+
   // Install Service Worker.
   try {
-    // TODO(kanslulz): Add a scope.
-    serviceWorkerReg =
-        await navigator.serviceWorker.register('static/js/sw.js', {scope: '/backgroundsync/'});
+    serviceWorkerReg = await navigator.serviceWorker.register(
+        'static/js/sw.js', {scope: '/backgroundsync/'});
+    logController.addUpdate('Registered Service Worker C:');
   } catch (e) {
-    console.log('Failed to register');
+    logController.addUpdate('Failed to register Service Worker :C');
+    return;
   }
 
-  navigator.serviceWorker.addEventListener('message', event => console.log(event.data));
-  serviceWorkerReg.sync.register('lel');
+  navigator.serviceWorker.addEventListener('message', event => logController.addUpdate(event.data));
+  serviceWorkerReg.sync.register('startup-sync-event');
 }

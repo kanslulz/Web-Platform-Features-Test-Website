@@ -14,6 +14,7 @@ app.use('/[^/]+$', (req, res) => res.redirect(req.baseUrl + '/'));
 app.use('/home', require('home/app.js'));
 app.use('/backgroundfetch', require('backgroundfetch/app.js'));
 app.use('/backgroundsync', require('backgroundsync/app.js'));
+app.use('/common', require('common/app.js'));
 app.use('/webpush', require('webpush/app.js'));
 
 // Handle unknown requests.

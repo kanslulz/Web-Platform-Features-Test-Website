@@ -1,12 +1,15 @@
 include includes/spinner.pug
+include ../common/header.pug
 
 doctype html
 html
   include includes/head.pug
   body
-    div.header
-      p.header-text Push Notifications Test Website
-      p.header-sub Create custom schedulable push notifications    
+    // Header 
+    - const title = 'Push Notifications Test Website'
+    - const subtitle = 'Create custom schedulable push notifications'
+    +header(title, subtitle)
+
     div.grid  
       div.instructions
         include includes/instructions.pug

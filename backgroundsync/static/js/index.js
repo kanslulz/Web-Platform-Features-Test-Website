@@ -11,7 +11,7 @@ async function setup() {
   try {
     // TODO(kanslulz): Add a scope.
     serviceWorkerReg =
-        await navigator.serviceWorker.register('static/js/sw.js');
+        await navigator.serviceWorker.register('static/js/sw.js', {scope: '/backgroundsync/'});
   } catch (e) {
     console.log('Failed to register');
   }

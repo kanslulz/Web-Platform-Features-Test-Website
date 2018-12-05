@@ -16,6 +16,6 @@ async function setup() {
     console.log('Failed to register');
   }
 
-  window.addEventListener('message', event => console.log(event.data));
+  navigator.serviceWorker.addEventListener('message', event => console.log(event.data));
   serviceWorkerReg.sync.register('lel');
 }

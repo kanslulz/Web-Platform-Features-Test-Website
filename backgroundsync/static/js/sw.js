@@ -15,5 +15,5 @@ async function postMessageToWindow(msg) {
 }
 
 self.addEventListener('sync', event => {
-  event.waitUntil(postMessageToWindow('Got sync event: ' + event.tag));
+  event.waitUntil(postMessageToWindow(`Got sync event: '<i>${event.tag}</i>'`));
 });

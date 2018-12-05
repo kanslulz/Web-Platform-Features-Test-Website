@@ -4,11 +4,11 @@
 class LogController {
   constructor() {
     /** @const @private {!HTMLElement} */
-    this.log_ = document.getElementsByClassName('log')[0];
+    this.log_ = document.getElementsByClassName('log-updates')[0];
   }
   
   /**
-   * @param {string} update The update to display.
+   * @param {string} update The update to display. Can be HTML.
    */
   addUpdate(update) {
     this.log_.insertAdjacentHTML(

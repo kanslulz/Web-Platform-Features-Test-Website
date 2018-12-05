@@ -1,3 +1,5 @@
+import {logController} from './log.js';
+
 /**
  * Registers the custom sync.
  */
@@ -24,7 +26,9 @@ class SyncHandler {
   }
 
   createSync() {
-    this.syncManager_.register(this.getSyncOptions_());
+    const syncId = this.getSyncOptions_();
+    logController.addUpdate(`Registering: <pre>${syncId}</pre>`);
+    this.syncManager_.register(syncId);
   }
 }
 

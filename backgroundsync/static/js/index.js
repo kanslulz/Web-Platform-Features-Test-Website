@@ -23,6 +23,9 @@ async function setup() {
   const syncHandler = await import('./sync.js').then(m => m.createHandler(serviceWorkerReg.sync));
   syncHandler.createSync();
 
-  const button = document.getElementsByClassName('btn')[0];
-  button.addEventListener('click', () => syncHandler.createSync());
+  const registerButton = document.getElementById('btn-register');
+  registerButton.addEventListener('click', () => syncHandler.createSync());
+
+  const clearButton = document.getElementById('btn-clear');
+  clearButton.addEventListener('click', () => logController.clear());
 }

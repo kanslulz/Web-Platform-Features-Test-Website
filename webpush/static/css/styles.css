@@ -64,3 +64,12 @@ input[type="text"] {
 #time-wrapper {
   padding-right: 20px;
 }
+
+input {
+  padding: 10px 5px 10px 5px;
+  font-size: 150%;
+}
+
+#time-picker {
+  width: 30%;
+}

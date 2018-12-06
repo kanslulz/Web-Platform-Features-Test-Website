@@ -2,3 +2,8 @@ mixin box(data)
   div.box(onclick="location.href='" + data.redirect + "'")
     div.box-title
       label #{data.title}
+    hr
+    div(style="padding-left: 10px;")
+      p(style="font-family: monospace;") 
+        strong TODO: 
+        label Describe `#{data.title}` and include some useful info.

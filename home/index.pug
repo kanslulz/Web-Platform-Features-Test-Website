@@ -1,19 +1,18 @@
 include ../common/header.pug
+include box.pug
 
 doctype html
 html
   head
     title kanslulz
+    link(rel="stylesheet" href="static/css/styles.css")
   body
     // Header 
     - const title = 'Web Platform Features Test Website'
     - const subtitle = 'Choose a web platform feature to test on your browser'
     +header(title, subtitle)
 
-    ul
-      li
-        a(href="/backgroundfetch/") Background Fetch
-      li
-        a(href="/backgroundsync/") Background Sync
-      li
-        a(href="/webpush/") Web Push
+    div.wrapper
+      +box({title: 'Background Sync', redirect: '/backgroundsync/'})
+      +box({title: 'Background Fetch', redirect: '/backgroundfetch/'})
+      +box({title: 'Web Push', redirect: '/webpush/'})

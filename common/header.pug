@@ -1,5 +1,10 @@
 mixin header(title, subtitle)
   link(rel="stylesheet" href="/common/static/css/header.css")
   div.header
-    p.header-text #{title}
-    p.header-sub #{subtitle}
+      p.header-text #{title}
+      hr
+      div(style="float: left;")
+        p.header-sub #{subtitle}
+      div(style="float: right;")
+        a(href="https://github.com/kanslulz/rayankanso.com" target="_blank")
+          img.icon(src="/common/static/img/github.png" height="32" width="32")

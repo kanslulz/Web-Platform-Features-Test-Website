@@ -12,7 +12,8 @@ html
     - const subtitle = 'Choose a web platform feature to test on your browser'
     +header(title, subtitle)
 
-    div.wrapper
-      +box({title: 'Background Sync', redirect: '/backgroundsync/'})
-      +box({title: 'Background Fetch', redirect: '/backgroundfetch/'})
-      +box({title: 'Web Push', redirect: '/webpush/'})
+    div.top-grid
+      div.box-wrapper
+        +box({title: 'Background Sync', redirect: '/backgroundsync/'})
+        +box({title: 'Background Fetch', redirect: '/backgroundfetch/'})
+        +box({title: 'Web Push', redirect: '/webpush/'})
